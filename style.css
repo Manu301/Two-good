@@ -1,0 +1,269 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::selection{
+    background-color: #000;
+    color: #fff;
+}
+
+@font-face{
+    font-family: futura;
+    src: url('./Futura-Bold.ttf');
+}
+
+@font-face {
+    font-family: helvetica;
+    src: url('./HelveticaNowText-Regular.ttf');
+}
+
+body,html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: #f7f7f7;
+}
+
+#crsr{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: #ede6e6;
+    position: fixed;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+#nav{
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 99999;
+    padding: 25px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#nav #nav-cont{
+    height: 83px;
+    overflow: hidden;
+}
+
+#nav-cont svg{
+    display: block;
+}
+
+#nav #nav-inner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+#nav-inner #links{
+    margin-right: 1vw;
+    padding: 10px;
+}
+
+#nav-inner #links a{
+    text-decoration: none;
+    color: #1f1e1e;
+    font-weight: 200;
+    font-size: 15px;
+    margin-right: 70px;
+    text-transform: uppercase;
+}
+
+#nav-inner #icons{
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #f7f7f7;
+}
+
+#nav-inner #icons i{
+    font-size: 18px;
+    margin-right: 40px;
+    font-weight: 100;
+}
+
+#main{
+    position: relative;
+}
+
+#page1{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 0 1vw;
+    padding-top: 18vh;
+}
+
+#page1 h1{
+    font-size: 15vw;
+    font-family: futura;
+    text-transform: uppercase;
+    line-height: 14vw;
+    letter-spacing: -8px;
+}
+
+#video-container{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    margin-top: 1vw;
+}
+
+#video-container #play{
+    padding: 3vw 2.2VW;
+    background-color: #000;
+    color: #fff;
+    font-size: 1.3vw;
+    text-transform: uppercase;
+    font-family: futura;
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0;
+    scale: 0;
+}
+
+#video-container video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#page2{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3vw 1vw;
+}
+
+.elem{
+    min-height: 100%;
+    width: 31%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 9vw;
+}
+
+.elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    scale: 1.1;
+}
+
+.elem .dets{
+    height: 60px;
+    width: 80%;
+    position: absolute;
+    z-index: 9;
+    border-radius: 50px;
+    background-color: #e5f0d6;
+    transition: all ease .3s;
+}
+
+.dets:hover{
+    height: 100px;
+}
+
+#page3{
+    min-height: 120vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.child{
+    height: 70vh;
+    width: 38vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vw;
+}
+
+.child > img{
+    height: 100%;
+}
+
+
+@media (max-width: 600px){
+    #nav {
+        padding: 10px; 
+    }
+
+    #nav-inner #links {
+        display: none; 
+    }
+
+    #nav-inner #icons i {
+        font-size: 16px; 
+        margin-right: 50px; 
+    }
+
+    #nav #nav-cont {
+        height: 81px; 
+    }
+
+    #main #page1{
+        min-height: 70vh;
+        padding: 0vw 3vw;
+        padding-top: 25vh;
+    }
+    #page1 h1{
+        font-size: 15.5vw;
+        letter-spacing: -3px;
+    }
+    #video-container{
+        height: 25vh;
+        margin-top: 3vw;
+    }
+    #video-container #play{
+        opacity: 1;
+        scale: 1;
+        font-size: 4.5vw;
+        padding: 7.5vw 5.3vw;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #page2{
+        flex-direction: column;
+        padding: 5vw 3vw;
+        min-height: 300vh;
+    }
+    .elem{
+        min-height: 33.33%;
+        width: 100%;
+        margin-bottom: 3vw;
+    }
+    #page2 .elem .dets{
+        height: 40px;
+    }
+    .child{
+        width: 50vw;
+        height: 23vh;
+    }
+    .child img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
